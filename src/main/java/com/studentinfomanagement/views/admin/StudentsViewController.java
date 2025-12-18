@@ -19,6 +19,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 public class StudentsViewController {
 
@@ -65,8 +68,37 @@ public class StudentsViewController {
         colTrangThai.setCellValueFactory(new PropertyValueFactory<>("trangthai"));
 
         colAction.setCellFactory(param -> new TableCell<>() {
-            private final Button btnEdit = new Button("✎");
-            private final Button btnDelete = new Button("🗑");
+            private final Button btnEdit = new Button();
+private final Button btnDelete = new Button();
+
+{
+    ImageView editIcon = new ImageView(
+        new Image(getClass().getResourceAsStream("/icons/edit.png"))
+    );
+    editIcon.setFitWidth(16);
+    editIcon.setFitHeight(16);
+
+    ImageView deleteIcon = new ImageView(
+        new Image(getClass().getResourceAsStream("/icons/delete.png"))
+    );
+    deleteIcon.setFitWidth(16);
+    deleteIcon.setFitHeight(16);
+
+    btnEdit.setGraphic(editIcon);
+    btnDelete.setGraphic(deleteIcon);
+
+    btnEdit.getStyleClass().add("action-button");
+    btnDelete.getStyleClass().add("action-button");
+
+    btnEdit.setOnAction(event ->
+        handleEdit(getTableView().getItems().get(getIndex()))
+    );
+
+    btnDelete.setOnAction(event ->
+        handleDelete(getTableView().getItems().get(getIndex()))
+    );
+}
+
             private final HBox pane = new HBox(20, btnEdit, btnDelete);
             
 
