@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="480.0" prefWidth="450.0" style="-fx-background-color: white;" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studentinfomanagement.views.LoginWindowController">
+   <children>
+      <VBox layoutX="25.0" layoutY="30.0" prefHeight="420.0" prefWidth="400.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label text="Chào mừng trở lại" textFill="#333333">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label text="Đăng nhập vào tài khoản để tiếp tục" textFill="GRAY">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+
+            <Label text="Mã Sinh Viên / Tên Đăng Nhập:" textFill="#555555">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtUsername" prefHeight="45.0" styleClass="input-field">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </TextField>
+
+            <Label text="Mật Khẩu:" textFill="#555555">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="txtPassword" prefHeight="45.0" styleClass="input-field">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </PasswordField>
+
+            <Button fx:id="LoginButton" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="400.0" styleClass="purple-button" text="ĐĂNG NHẬP" />
+
+            <VBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0">
+               <children>
+                  <Text fill="#ffa084ef" onMouseClicked="#handleRegisterLink" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true; -fx-cursor: hand;" text="Bạn chưa có tài khoản?">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
